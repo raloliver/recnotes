@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+/*
+ * File: App.js
+ * Project: recnotes
+ * Created: Thursday, September 9th 2021, 6:13:39 am
+ * Last Modified: Thursday, September 9th 2021, 6:17:14 am
+ * Copyright © 2021 AMDE Agência
+ */
+
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My recNotes</h1>
     </div>
   );
 }
