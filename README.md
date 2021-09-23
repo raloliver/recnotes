@@ -15,3 +15,4 @@ Docs: https://github.com/typicode/json-server
 ### To Do
 
 - Apply able to change the theme (dark/light)
+- Fixed bug when saving note and came back to the list
