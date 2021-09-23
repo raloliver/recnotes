@@ -2,7 +2,7 @@
  * File: NotePage.js
  * Project: recnotes
  * Created: Thursday, September 9th 2021, 6:55:00 am
- * Last Modified: Thursday, September 23rd 2021, 12:56:21 pm
+ * Last Modified: Thursday, September 23rd 2021, 1:26:18 pm
  * Copyright © 2021 AMDE Agência
  */
 
@@ -27,7 +27,7 @@ const NotePage = ({match, history}) => {
   };
 
   const updateNote = async () => {
-    const noteService = await fetch(`http://localhost:8081/notes/${noteId}`, {
+    await fetch(`http://localhost:8081/notes/${noteId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -36,11 +36,28 @@ const NotePage = ({match, history}) => {
     });
   };
 
+  const deleteNote = async () => {
+    await fetch(`http://localhost:8081/notes/${noteId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(note),
+    });
+
+    history.push('/');
+  };
+
   /**
    * Redirect user to the homepage when clicks on back button
+   * Delete note when is empty
    */
   const onBackList = () => {
-    updateNote();
+    if (noteId !== 0 && !note.body) {
+      deleteNote();
+    } else if (noteId !== 0) {
+      updateNote();
+    }
     history.push('/');
   };
 
@@ -52,6 +69,7 @@ const NotePage = ({match, history}) => {
             <ArrowLeft onClick={onBackList} />
           </Link>
         </h3>
+        <button onClick={deleteNote}>DELETE</button>
       </header>
       <textarea
         onChange={(event) => {
