@@ -2,11 +2,12 @@
  * File: NotesPage.js
  * Project: recnotes
  * Created: Thursday, September 9th 2021, 6:37:50 am
- * Last Modified: Saturday, September 18th 2021, 8:11:50 am
+ * Last Modified: Thursday, September 23rd 2021, 1:58:39 pm
  * Copyright © 2021 AMDE Agência
  */
 
-import Reac, {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
+import AddButton from '../components/AddButton';
 import ListItem from '../components/ListItem';
 
 function NotesPage() {
@@ -16,9 +17,6 @@ function NotesPage() {
   // this will be fire only on the first load
   useEffect(() => {
     getNotes();
-    // return () => {
-    //   cleanup;
-    // };
   }, []);
 
   const getNotes = async () => {
@@ -39,6 +37,7 @@ function NotesPage() {
           <ListItem note={note} key={index} />
         ))}
       </div>
+      <AddButton />
     </>
   );
 }
