@@ -2,7 +2,7 @@
  * File: NotesPage.js
  * Project: recnotes
  * Created: Thursday, September 9th 2021, 6:37:50 am
- * Last Modified: Thursday, September 23rd 2021, 1:58:39 pm
+ * Last Modified: Thursday, September 30th 2021, 4:54:17 am
  * Copyright © 2021 AMDE Agência
  */
 
@@ -29,7 +29,9 @@ function NotesPage() {
   return (
     <>
       <header>
-        <h2 className="title">&#9782; Notes</h2>
+        <a href="/">
+          <h2 className="title">&#9782; Notes</h2>
+        </a>
         <p className="count">{notes.length}</p>
       </header>
       <div className="list">
